@@ -30,13 +30,14 @@
     width: 3rem;
     height: 100vh;
     position: absolute;
-    top:0;
-    left:calc(-3rem - 5px);
-    background:#fff;
-    box-shadow: 5px 1px 3px #ccc;
+    top: 0;
+     left: calc(-3rem - 10px); 
+    background: #fff;
+    box-shadow: 4px -2px 16px 0px #adabab;
     text-align: center;
     padding-top: .6rem;
     box-sizing: border-box;
+    z-index: 99;
   }
   .link-to{
     display: inline-block;

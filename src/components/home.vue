@@ -1,40 +1,53 @@
-<template v-if='someData'>
-	<div class="home-bg"  :style="someData.bgImg">
-		<div class="home-desc">
-			<h4 class="day">{{someData.day}}</h4>
-			<p class="month">{{someData.month}}</p>
-			<p class="text-short">{{someData.textShort}}</p>
-			<span class="down"><i></i></span>			
-		</div>
-	</div>
+<template>
+<div>
+  <div class="home-bg"  :style="homeDesc.bgImg">
+    <div class="home-desc">
+      <h4 class="day">{{homeDesc.day}}</h4>
+      <p class="month">{{homeDesc.month}}</p>
+      <p class="text-short">{{homeDesc.textShort}}</p>
+      <span class="down"><i></i></span>     
+    </div>
+  </div>
+  <div class="home-article">
+    <span class="tag">阅读|</span>
+    <h1 class="title">{{homeArticle.artTitle}}</h1>
+    <span class="article-author">{{homeArticle.artAuthor}}</span>
+    <p>{{homeArticle.artShort}}</p>
+    <span class="read-more">阅读全文</span>
+  </div>
+  <div class="home-question">
+    <span class="tag">问答|</span>
+    <h1 class="title">{{homeQuestion.quesTitle}}</h1>
+    <p>{{homeQuestion.quesShort}}</p>
+    <span class="read-more">阅读全文</span>
+  </div>
+</div>
 </template>
 
 <script>
 export default {
   name: 'home',
   data:function(){
-	return {
-	  msg: 'Welcome to one demo',
-	  someData:{
-	  	day:"1",
-	  	month:"2",
-	  	textShort:"this is one",
-	  	bgImg:"bg"
-	  }
-	}
+  return {
+    msg: 'Welcome to one demo',
+    homeDesc:{},
+    homeArticle:{},
+    homeQuestion:{}
+  }
   },
   created:function(){
-  	this.someData = this.getDatas();
+    this.getDatas();
   },
   methods:{
     getDatas:function(){
-  		this.$http.get("/homeData").then(response => {
-  			this.someData = response.body.datas;
-  			console.log(typeof response.body.datas)
-  		},error => {
-  			console.log(error);
-  		});
-  	}
+      this.$http.get("/homeData").then(response => {
+        this.homeDesc = response.body.homeDesc;
+        this.homeArticle = response.body.homeArticle;
+        this.homeQuestion = response.body.homeQuestion;
+      },error => {
+        console.log(error);
+      });
+    }
   }
 }
 </script>
@@ -45,30 +58,49 @@ export default {
 	background-repeat: no-repeat;
 	background-size: cover;
 	overflow: hidden;
-    width: 100%;
-    position: relative;
-    box-sizing: border-box;
-    padding: 0 .5rem;
-    color:#fff;
+  width: 100%;
+  position: relative;
+  top: -2px;
+  box-sizing: border-box;
+  padding: 0 .4rem;
+  color:#fff;
 }
 .home-desc{
 	position: absolute;
-    bottom: 2rem;
-    padding-right: .5rem;
+  bottom: .5rem;
+  padding-right:.4rem;
 }
 .day{
 	font-size: .8rem;
-    font-weight: normal;
+  font-weight: normal;
+  margin: .1rem 0;
 }
 .month{
-    font-size: .4rem;
+  font-size: .4rem;
+  margin: .2rem 0;
 }
 .text-short{
-    height: .4rem;
-    line-height: .4rem;
-    overflow: hidden;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    font-size: .29rem;
+  height: 1.35rem;
+  line-height: .45rem;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  font-size: .29rem;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+}
+.down{
+  width: .83rem;
+  height: .4rem;
+  left: 50%;
+  position: relative;
+  margin-left: -.42rem;
+  margin-top: .3rem;
+}
+.down i{
+  width: .83rem;
+  height: .35rem;
+  background: url(/static/images/down.png) no-repeat;
+  background-size: 100% 100%;
 }
 </style>

@@ -50,6 +50,9 @@ span,i{display: inline-block;}
 .clearfix:before,.clearfix:after {display: table;line-height: 0;content: "";}
 .clearfix:after {clear: both;}
 .home-main{
-	position: relative;
+    position: relative;
+    height: 100vh;
+    overflow-y: scroll;
+    width: 100%;
 }
 </style>

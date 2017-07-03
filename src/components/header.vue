@@ -17,9 +17,10 @@ export default {
 	.header{
 		height: .7rem;
 		width: 100%;
-		border:1px solid #ddd;
 		text-align: center;
 		line-height: .7rem;
+		border-left: 1px solid #ddd;
+    	border-right: 1px solid #ddd;
 	}
 	.one-title{
 		display: inline-block;
