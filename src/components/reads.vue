@@ -1,36 +1,35 @@
 <template>
-	<div class="reads-box">
-	<template v-for="data in musicData">
+	<!-- <div class="reads-box">
+	<template v-for="data in articleData">
 		<div class="article-box" :data-id="data.id">
 			<p class="article-tag">{{data["text-tag"]}}</p>
-			<h3 class="article-title">{{data["text-title"]}}</h3>
+			<h3 class="article-title">{{data["title"]}}</h3>
 			<span class="article-author">{{data["text-author"]}}</span>
 			<div class="article-img">
-				<img :src="data['item-picture-img']">
+				<img :src="data['text-cover-img']">
 			</div>
-			<span class="music-author">{{data["text-music-author"]}}</span>
 			<p class="article-short">{{data["text-content-short"]}}</p>
 			<span class="date">{{data["date"]}}</span>
 		</div>
 	</template>
-	</div>
+	</div> -->
 </template>
 <script>
 export default {
-	name:"music",
+	name:"reads",
 	data:function(){
 		return {
-			musicData:""
+			articleData:""
 		}
 	},
 	created:function(){
 	   this.getDatas();
 	},
 	methods:{
-	    getDatas:function(){
-	     this.$http.get("/static/musicData.json").then(response => {
-	     	this.musicData = response.body.data;
-	     	console.log(response.body);
+	   getDatas:function(){
+	     this.$http.get("/static/data.json").then(response => {
+	     this.articleData = response.body.data;
+	     console.log(response.body.data)
 	      },error => {
 	        console.log(error);
 	      });
@@ -62,22 +61,14 @@ export default {
 	font-size: .26rem;
     margin-bottom: .2rem;
 }
-.article-img{
-	text-align: center;
-}
 .article-img img{
-	width: 70%;
-	border-radius: 50% 50%;
+	width: 100%;
 }
 .article-short{
 	font-size: .3rem;
     line-height: .5rem;
     margin: .1rem 0;
     text-indent: 10px;
-}
-.music-author{
-	margin: .2rem 0;
-    color: #a9a9a9;
 }
 .date{
 	font-size: .28rem;

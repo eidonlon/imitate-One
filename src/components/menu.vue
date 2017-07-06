@@ -1,20 +1,20 @@
 <template>
   <div class="one-menu">
-    <router-link to="/today" class="link-to">
-      图文
-    </router-link>
-    <router-link to="/reads" class="link-to">
-      阅读
-    </router-link>
-    <router-link to="/music" class="link-to">
-      音乐
-    </router-link>
-    <router-link to="/movie" class="link-to">
-     影视
-    </router-link>
-    <router-link to="/about" class="link-to">
-      关于
-    </router-link>
+      <router-link to="/today" class="link-to">
+        图文
+      </router-link>
+      <router-link to="/reads" class="link-to">
+        阅读
+      </router-link>
+      <router-link to="/music" class="link-to">
+        音乐
+      </router-link>
+      <router-link to="/movie" class="link-to">
+       影视
+      </router-link>
+      <router-link to="/about" class="link-to">
+        关于
+      </router-link>
   </div>
 </template>
 <script type="text/javascript">

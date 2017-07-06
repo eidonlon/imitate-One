@@ -9,7 +9,7 @@
 export default {
 	name: "header",
 	data:function(){
-		return {msg:"this is header"}
+		return {show:true}
 	}
 }
 </script>

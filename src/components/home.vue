@@ -8,18 +8,24 @@
       <span class="down"><i></i></span>     
     </div>
   </div>
-  <div class="home-article">
-    <span class="tag">阅读|</span>
-    <h1 class="title">{{homeArticle.artTitle}}</h1>
-    <span class="article-author">{{homeArticle.artAuthor}}</span>
-    <p>{{homeArticle.artShort}}</p>
-    <span class="read-more">阅读全文</span>
-  </div>
-  <div class="home-question">
-    <span class="tag">问答|</span>
-    <h1 class="title">{{homeQuestion.quesTitle}}</h1>
-    <p>{{homeQuestion.quesShort}}</p>
-    <span class="read-more">阅读全文</span>
+  <div class="one-content">
+    <div class="home-article">
+      <span class="tag">阅读|</span>
+      <h1 class="title">{{homeArticle.artTitle}}</h1>
+      <span class="article-author">{{homeArticle.artAuthor}}</span>
+         <div v-if="homeArticle.artShortImg" class="home-art-img"><img :src="homeArticle.artShortImg"></div>
+          <p v-else>{{homeArticle.artShort}}</p>
+      <span class="read-more">阅读全文</span>
+    </div>
+    <div class="home-question">
+      <span class="tag">问答|</span>
+      <h1 class="title">{{homeQuestion.quesTitle}}</h1>
+      <p>{{homeQuestion.quesShort}}</p>
+      <span class="read-more">阅读全文</span>
+    </div>
+    <div class="home-more">
+      <span>更多内容</span>
+    </div>
   </div>
 </div>
 </template>
@@ -102,5 +108,57 @@ export default {
   height: .35rem;
   background: url(/static/images/down.png) no-repeat;
   background-size: 100% 100%;
+}
+.tag{
+  color: #54b2d8;
+  margin-bottom: .2rem;
+}
+.title{
+  font-size: .5rem;
+  line-height: .7rem;
+  margin-bottom: .1rem;
+}
+.article-author{
+  margin-bottom: .1rem;
+  margin-left: .2rem;
+}
+.home-art-img{
+  height: 2.5rem;
+}
+.home-art-img img{
+  width: 100%;
+  height: 100%;
+}
+.read-more{
+  font-size: .32rem;
+  color: #54b2d8;
+  margin: .1rem;
+}
+.home-article{
+  margin-bottom: 1rem;
+}
+.home-question{
+  margin-bottom: 1rem;
+}
+.home-question p{
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 1.26rem;
+  line-height: .42rem;
+  display: -webkit-box;
+  font-size: .29rem;
+  -webkit-box-orient: vertical;
+}
+.one-content .home-more{
+  text-align: center;
+}
+.home-more span{
+  font-size: .4rem;
+  line-height: .4rem;
+  border: 1px solid #ddd;
+  padding: .15rem .2rem;
+  border-radius: 5px;
+  line-height: .4rem;
 }
 </style>

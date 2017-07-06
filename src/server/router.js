@@ -3,7 +3,6 @@ var http = require("http");
 var router = express.Router();
 var cheerio = require("cheerio");
 
-
 router.get("/homeData",function(req,res){
 	var homeDesc = {},
 		homeArticle = {},
@@ -25,15 +24,14 @@ router.get("/homeData",function(req,res){
 			homeArticle.artTitle = $(".article .text-title").text();
 			homeArticle.artAuthor = $(".article .text-author").text();
 			homeArticle.artShort = $(".article .text-content-short").text();
+			homeArticle.artShortImg = $(".article .one-img-container img").attr("src");
 
 			homeQuestion.quesTitle = $(".question .text-title").text();
 			homeQuestion.quesShort = $(".question .text-content-short").text();
-
 			res.send({"homeDesc":homeDesc,"homeArticle":homeArticle,"homeQuestion":homeQuestion});
 		});
 	}).on("error",function(err){
 		console.log(err)
 	})
 });
-
 module.exports = router;
