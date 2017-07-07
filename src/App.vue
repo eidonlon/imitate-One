@@ -32,13 +32,59 @@ export default {
   }
 }
 
+window.onload = function(){
+  var menu = document.getElementsByClassName("menu")[0];
+  var nav= document.getElementsByClassName("one-menu")[0];
+  var linkTo= document.getElementsByClassName("link-to");
+  var homeMain= document.getElementsByClassName("home-main")[0];
+  var showSymbol = true;
+  var stop = null;
+  linkTo = Array.prototype.slice.call(linkTo);
+  const position = nav.offsetLeft;
+
+  menu.addEventListener("click",function(){
+      toggleMenu(8,0);
+      showSymbol = !showSymbol;
+  },false);
+
+  linkTo.forEach(function(val){
+    val.addEventListener("click",function(){
+      toggleMenu(-8,position);
+      showSymbol = !showSymbol;
+     },false);
+  });
+
+  homeMain.addEventListener("click",function(){
+      toggleMenu(-8,position);
+      showSymbol = !showSymbol;
+  },false);
+
+  function toggleMenu(speed,position){
+    if(stop){
+      window.cancelAnimationFrame(moveTo.bind(this,speed,position));
+      window.requestAnimationFrame(moveTo.bind(this,speed,position));   
+    }else{
+      window.requestAnimationFrame(moveTo.bind(this,speed,position));   
+    }
+  }
+  function moveTo(speed,position){
+    nav.style.left = nav.offsetLeft + speed +"px";
+    if(Math.abs(Math.abs(nav.offsetLeft) - Math.abs(position)) > 8){
+     stop = window.requestAnimationFrame(moveTo.bind(this,speed,position));   
+    }else{
+      nav.style.left = position +"px";
+      window.cancelAnimationFrame(moveTo.bind(this,speed,position));
+    }
+    console.log(nav.offsetLeft)
+  }
+}
 </script>
 <style>
 *{padding: 0;margin:0;}
 html{
   width: 100%; 
   height: 100%; 
-  max-width: 768px;
+  /*max-width: 768px;*/
   margin: 0 auto;
   background: #fff;
 }
@@ -65,3 +111,4 @@ span,i{display: inline-block;}
   width: 100%;
 }
 </style>
+
