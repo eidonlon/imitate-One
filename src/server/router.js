@@ -2,6 +2,7 @@ var express = require("express");
 var http = require("http");
 var router = express.Router();
 var cheerio = require("cheerio");
+var fs = require("fs");
 
 router.get("/homeData",function(req,res){
 	var homeDesc = {},
@@ -32,6 +33,37 @@ router.get("/homeData",function(req,res){
 		});
 	}).on("error",function(err){
 		console.log(err)
+	});
+});
+
+router.get("/readDetail",function(req,res){
+	var aId = req.query.aId;
+	var detail = {};
+	var _html;
+	detail.editor = [];
+	http.get("http://m.wufazhuce.com/article/"+aId,function(response){
+		response.on("data",function(chunk){
+			_html += chunk;
+		});
+		response.on("end",function(){
+			console.log("爬取结束");
+			$ = cheerio.load(_html,{decodeEntities: false});
+			detail.title = $(".text-title").text();
+			detail.author = $(".text-author").text();
+			detail.article = $(".text-content").html();
+			detail.title = $(".text-title").text();
+
+			$(".text-editor").each(function(){
+				detail.editor.push($(this).text());
+			})
+
+			res.charset = 'utf-8';
+			console.log(detail.article)
+			res.send({"detail":detail})
+		},"utf-8");
+	}).on("error",function(err){
+		console.log(err)
 	})
+
 });
 module.exports = router;

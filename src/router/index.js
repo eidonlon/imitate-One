@@ -9,7 +9,7 @@ var reads = require("../pages/reads.vue")
 var music = require("../pages/music.vue")
 var movie = require("../pages/movie.vue")
 var about = require("../pages/about.vue")
-
+var readDetials = require("../components/readDetials.vue")
 
 var routes = [
 	{path:"/",component:home},
@@ -18,7 +18,8 @@ var routes = [
 	{path:"/reads",component:reads},
 	{path:"/music",component:music},
 	{path:"/movie",component:movie},
-	{path:"/about",component:about}
+	{path:"/about",component:about},
+	{path:"/readDetials",component:readDetials}
 ];
 
 Vue.use(Router)

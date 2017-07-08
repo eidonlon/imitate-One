@@ -75,7 +75,6 @@ window.onload = function(){
       nav.style.left = position +"px";
       window.cancelAnimationFrame(moveTo.bind(this,speed,position));
     }
-    console.log(nav.offsetLeft)
   }
 }
 </script>
@@ -84,7 +83,6 @@ window.onload = function(){
 html{
   width: 100%; 
   height: 100%; 
-  /*max-width: 768px;*/
   margin: 0 auto;
   background: #fff;
 }

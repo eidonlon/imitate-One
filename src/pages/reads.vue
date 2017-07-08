@@ -1,16 +1,16 @@
 <template>
 	<div class="reads-box">
 	<template v-for="data in articleData">
-		<div class="article-box" :data-id="data.id">
-			<p class="article-tag">{{data["text-tag"]}}</p>
-			<h3 class="article-title">{{data["title"]}}</h3>
-			<span class="article-author">{{data["text-author"]}}</span>
-			<div class="article-img">
-				<img :src="data['text-cover-img']">
-			</div>
-			<p class="article-short">{{data["text-content-short"]}}</p>
-			<span class="date">{{data["date"]}}</span>
+	<div class="article-box" :data-id="data.id" @click="articlesDetailsFn(data.id)">
+		<p class="article-tag">{{data["text-tag"]}}</p>
+		<h3 class="article-title">{{data["title"]}}</h3>
+		<span class="article-author">{{data["text-author"]}}</span>
+		<div class="article-img">
+			<img :src="data['text-cover-img']">
 		</div>
+		<p class="article-short">{{data["text-content-short"]}}</p>
+		<span class="date">{{data["date"]}}</span>
+	</div>
 	</template>
 	</div>
 </template>
@@ -33,7 +33,10 @@ export default {
 	      },error => {
 	        console.log(error);
 	      });
-	    }
+	    },
+	    articlesDetailsFn: function(id){
+            this.$router.push("/readDetials?id="+id)
+        }
 	}
 }
 </script>
