@@ -1,12 +1,12 @@
 <template>
 	<div class="reads-box">
 	<template v-for="data in musicData">
-		<div class="article-box" :data-id="data.id">
+		<div class="article-box" :data-id="data.id" @click="articlesDetailsFn(data.id)">
 			<p class="article-tag">{{data["text-tag"]}}</p>
 			<h3 class="article-title">{{data["text-title"]}}</h3>
 			<span class="article-author">{{data["text-author"]}}</span>
 			<div class="article-img">
-				<img :src="data['item-picture-img']">
+				<img class="music-img" :src="data['item-picture-img']">
 			</div>
 			<span class="music-author">{{data["text-music-author"]}}</span>
 			<p class="article-short">{{data["text-content-short"]}}</p>
@@ -34,7 +34,10 @@ export default {
 	      },error => {
 	        console.log(error);
 	      });
-	    }
+	    },
+	    articlesDetailsFn: function(id){
+            this.$router.push("/musicDetail?id="+id)
+        }
 	}
 }
 </script>
@@ -84,4 +87,17 @@ export default {
     color: #A9A9A9;
     margin: .2rem 0 .3rem 0;
 }
+.music-img{
+	animation: move linear 5s infinite;
+}
+@keyframes move{
+	0% {transform:rotate(0deg);}
+	15% {transform:rotate(30deg);}
+	30% {transform:rotate(60deg);}
+	45% {transform:rotate(90deg);}
+	60% {transform:rotate(120deg);}
+	75% {transform:rotate(150deg);}
+	100% {transform:rotate(180deg);}
+}
+
 </style>

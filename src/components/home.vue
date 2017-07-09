@@ -1,6 +1,6 @@
 <template>
 <div>
-  <div class="home-bg"  :style="homeDesc.bgImg">
+  <div class="home-bg"  :style="homeDesc.bgImg" @click="articlesToPicture(homeDesc.id)">
     <div class="home-desc">
       <h4 class="day">{{homeDesc.day}}</h4>
       <p class="month">{{homeDesc.month}}</p>
@@ -15,16 +15,16 @@
       <span class="article-author">{{homeArticle.artAuthor}}</span>
          <div v-if="homeArticle.artShortImg" class="home-art-img"><img :src="homeArticle.artShortImg"></div>
           <p v-else>{{homeArticle.artShort}}</p>
-      <span class="read-more">阅读全文</span>
+          <span class="read-more" @click="articlesToRead(homeArticle.id)">阅读全文</span>
     </div>
     <div class="home-question">
       <span class="tag">问答|</span>
       <h1 class="title">{{homeQuestion.quesTitle}}</h1>
       <p>{{homeQuestion.quesShort}}</p>
-      <span class="read-more">阅读全文</span>
+      <span class="read-more" @click="articlesToQuestion(homeQuestion.id)">阅读全文</span>
     </div>
     <div class="home-more">
-      <span>更多内容</span>
+      <router-link class="to-more" to="/picture">更多内容</router-link>
     </div>
   </div>
 </div>
@@ -50,9 +50,20 @@ export default {
         this.homeDesc = response.body.homeDesc;
         this.homeArticle = response.body.homeArticle;
         this.homeQuestion = response.body.homeQuestion;
+
+        console.log(response.body.homeDesc)
       },error => {
         console.log(error);
       });
+    },
+    articlesToPicture: function(id){
+        this.$router.push("/pictureDetail?id="+id)
+    },
+    articlesToRead: function(id){
+        this.$router.push("/readDetials?id="+id)
+    },
+    articlesToQuestion: function(id){
+        this.$router.push("/questionDetail?id="+id)
     }
   }
 }
@@ -153,7 +164,7 @@ export default {
 .one-content .home-more{
   text-align: center;
 }
-.home-more span{
+.home-more .to-more{
   font-size: .4rem;
   line-height: .4rem;
   border: 1px solid #ddd;

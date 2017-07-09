@@ -12,10 +12,7 @@
 	export default {
 		name:"home",
 		components:{
-			oneHeader,
-			oneMenu,
-			oneHome,
-			oneFooter
+			oneHome	
 		},
 		methods:{
 			

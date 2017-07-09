@@ -3,10 +3,11 @@
 		<h1 class="detail-title">{{details.title}}</h1>
 		<span class="line"></span>
 		<span class="detail-author">{{details.author}}</span>
-		<img :src="details['text-cover-img']">
+		<p class="detail-author">{{details.qContent}}</p>
+		<span class="question-line"></span>
+		<span class="detail-author">{{details.answers}}</span>
 		<div v-html="details.article"></div>
-		<i class="detail-editor">{{details.editor[0]}}</i>
-		<i class="detail-editor">{{details.editor[1]}}</i>
+		<i class="detail-editor">{{details.editor}}</i>
 	</div>
 </template>
 <script>
@@ -23,7 +24,7 @@ export default {
 	methods:{
 	   getDetail:function(){
 	   	 var aId = this.$route.query.id;
-	     this.$http.get("/readDetail?aId="+aId).then(response => {
+	     this.$http.get("/questionDetail?aId="+aId).then(response => {
 	     this.details = response.body.detail;
 	     console.log(response.body.detail)
 	      },error => {
@@ -46,6 +47,7 @@ export default {
 }
 .detail-author{
 	display: block;
+	margin: .3rem 0;
 }
 .reads-details p{
 	line-height: .45rem;
@@ -55,6 +57,11 @@ export default {
 }
 .reads-details p:first-child{
 	margin-bottom: .1rem;
+}
+.question-line{
+	width: 100%;
+	height: 1px;
+	background:#ddd;
 }
 .line{
     width: 2rem;

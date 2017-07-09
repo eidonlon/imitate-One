@@ -1,10 +1,10 @@
 <template>
 	<div class="picture-box">
 	<template v-for="data in pictureData">
-		<div class="article-box" :data-id="data.id">
+		<div class="article-box" :data-id="data.id" @click="articlesDetailsFn(data.id)">
 			<p class="picture-tag">{{data["item-picture-date"]}}</p>
 			<h3 class="picture-num">{{data["issue-no"]}}</h3>
-			<div class="article-img">
+			<div class="picture-img">
 				<img :src="data['item-picture-img']">
 			</div>
 			<span class="img-author">{{data["picture-author"]}}</span>
@@ -32,7 +32,10 @@ export default {
 	      },error => {
 	        console.log(error);
 	      });
-	    }
+	    },
+	    articlesDetailsFn: function(id){
+            this.$router.push("/pictureDetail?id="+id)
+        }
 	}
 }
 </script>
@@ -68,7 +71,7 @@ export default {
     line-height: .4rem;
     font-size: .28rem;
 }
-.article-img img{
+.picture-img img{
 	width: 100%;
 }
 .article-short{

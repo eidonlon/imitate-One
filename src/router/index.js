@@ -10,6 +10,9 @@ var music = require("../pages/music.vue")
 var movie = require("../pages/movie.vue")
 var about = require("../pages/about.vue")
 var readDetials = require("../components/readDetials.vue")
+var musicDetail = require("../components/musicDetail.vue")
+var pictureDetail = require("../components/pictureDetail.vue")
+var questionDetail = require("../components/questionDetail.vue")
 
 var routes = [
 	{path:"/",component:home},
@@ -19,7 +22,10 @@ var routes = [
 	{path:"/music",component:music},
 	{path:"/movie",component:movie},
 	{path:"/about",component:about},
-	{path:"/readDetials",component:readDetials}
+	{path:"/readDetials",component:readDetials},
+	{path:"/musicDetail",component:musicDetail},
+	{path:"/pictureDetail",component:pictureDetail},
+	{path:"/questionDetail",component:questionDetail}
 ];
 
 Vue.use(Router)

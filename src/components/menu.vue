@@ -1,6 +1,9 @@
 <template>
   <div class="one-menu">
       <router-link to="/reads" class="link-to">
+        阅读
+      </router-link>
+      <router-link to="/picture" class="link-to">
         图文
       </router-link>
       <router-link to="/music" class="link-to">

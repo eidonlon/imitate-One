@@ -24,7 +24,7 @@ export default {
       oneMenu,
       oneHome,
       oneFooter
-    },
+  },
   methods:{
   	toggleMenu:function(){
   		this.show = !show;
@@ -97,6 +97,10 @@ body{
   min-height: 100%;
   font-family: "arial","微软雅黑";
   overflow: hidden;
+}
+a{
+  text-decoration: none;
+  color:#333;
 }
 span,i{display: inline-block;}
 .clearfix {*zoom: 1;}

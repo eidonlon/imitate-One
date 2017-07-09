@@ -1,7 +1,8 @@
 <template>
 	<div class="reads-details">
+		<div id="imgHead"  v-html="details.img"></div>
+		<div class="music-info" v-html="details.musicInfo"></div>
 		<h1 class="detail-title">{{details.title}}</h1>
-		<span class="line"></span>
 		<span class="detail-author">{{details.author}}</span>
 		<img :src="details['text-cover-img']">
 		<div v-html="details.article"></div>
@@ -23,7 +24,7 @@ export default {
 	methods:{
 	   getDetail:function(){
 	   	 var aId = this.$route.query.id;
-	     this.$http.get("/readDetail?aId="+aId).then(response => {
+	     this.$http.get("/musicDetail?aId="+aId).then(response => {
 	     this.details = response.body.detail;
 	     console.log(response.body.detail)
 	      },error => {
@@ -41,11 +42,31 @@ export default {
 	text-align: justify;
 	margin-bottom: 1rem;
 }
-.one-img-container img{
+img{
 	width: 100%;
+	margin-bottom: .2rem;
+}
+.img-header {
+    position: relative;
+    height: 3rem;
+}
+.music-info{
+	text-align: center;
+	font-size: .3rem;
+	margin: .1rem 0;
+}
+#popupXiamiMusic{
+	display: none;
+}
+.pause-btn{
+	display: none;
+}
+.music-info div{
+	margin: .2rem 0;
 }
 .detail-author{
 	display: block;
+	margin: .2rem 0;
 }
 .reads-details p{
 	line-height: .45rem;
