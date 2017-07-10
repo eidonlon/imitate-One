@@ -1,11 +1,13 @@
 <template>
 <div>
   <div class="home-bg"  :style="homeDesc.bgImg" @click="articlesToPicture(homeDesc.id)">
-    <div class="home-desc">
-      <h4 class="day">{{homeDesc.day}}</h4>
-      <p class="month">{{homeDesc.month}}</p>
-      <p class="text-short">{{homeDesc.textShort}}</p>
-      <span class="down"><i></i></span>     
+    <div class="home-bgcolor">
+      <div class="home-desc">
+        <h4 class="day">{{homeDesc.day}}</h4>
+        <p class="month">{{homeDesc.month}}</p>
+        <p class="text-short">{{homeDesc.textShort}}</p>
+        <span class="down"><i></i></span>     
+      </div>
     </div>
   </div>
   <div class="one-content">
@@ -27,15 +29,21 @@
       <router-link class="to-more" to="/picture">更多内容</router-link>
     </div>
   </div>
+  <one-load v-show="showLoading"></one-load>
 </div>
 </template>
 
 <script>
+import oneLoad from "./loading.vue"
 export default {
   name: 'home',
+  components:{
+    oneLoad
+  },
   data:function(){
   return {
     msg: 'Welcome to one demo',
+    showLoading:true,
     homeDesc:{},
     homeArticle:{},
     homeQuestion:{}
@@ -50,8 +58,7 @@ export default {
         this.homeDesc = response.body.homeDesc;
         this.homeArticle = response.body.homeArticle;
         this.homeQuestion = response.body.homeQuestion;
-
-        console.log(response.body.homeDesc)
+        this.showLoading = false;
       },error => {
         console.log(error);
       });
@@ -79,8 +86,20 @@ export default {
   position: relative;
   top: -2px;
   box-sizing: border-box;
-  padding: 0 .4rem;
   color:#fff;
+}
+.one-content{ 
+  padding: .4rem;
+  margin-bottom: 1.3rem;
+}
+.one-content  p{
+  text-align: justify;
+}
+.home-bgcolor{
+  width: 100%;
+  height: 100%;
+  padding: 0 .4rem;
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8));
 }
 .home-desc{
 	position: absolute;
@@ -155,7 +174,6 @@ export default {
   -webkit-line-clamp: 3;
   overflow: hidden;
   text-overflow: ellipsis;
-  height: 1.26rem;
   line-height: .42rem;
   display: -webkit-box;
   font-size: .29rem;

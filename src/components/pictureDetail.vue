@@ -6,14 +6,20 @@
 		<div class="month">{{details.month}}</div>
 		<span class="picture-line"></span>
 		<p class="picture-article">{{details.article}}</p>
+  		<one-load v-show="showLoading"></one-load>
 	</div>
 </template>
 <script>
+import oneLoad from "./loading.vue"
 export default {
 	name:"reads",
+	components:{
+	    oneLoad
+	},
 	data:function(){
 		return {
-			details:""
+			details:"",
+			showLoading:true
 		}
 	},
 	created:function(){
@@ -23,8 +29,8 @@ export default {
 	   getDetail:function(){
 	   	 var aId = this.$route.query.id;
 	     this.$http.get("/pictureDetail?aId="+aId).then(response => {
-	     this.details = response.body.detail;
-	     console.log(response.body.detail)
+		     this.details = response.body.detail;
+	         this.showLoading = false;
 	      },error => {
 	        console.log(error);
 	      });

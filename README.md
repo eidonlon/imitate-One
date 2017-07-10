@@ -40,7 +40,7 @@ npm run build
 
 ##### 移动端扫描下方二维码
 
-![image](https://github.com/eidonlon/imitate-One/tree/master/static/images/link.png)
+![image](https://github.com/eidonlon/imitate-One/tree/master/static/images/link.png);
 
 ## 部分截图
 
