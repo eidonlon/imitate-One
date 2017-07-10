@@ -1,20 +1,20 @@
-#imitate ONE
+#imitate ONE#
 
 简介:这是一个使用vue仿的[ONE.一个]app,纯粹学习而已。
 
-### 用到的技术###
+###用到的技术###
 
 vue2 + vue-router + vue-resource + webpack + express + Node爬虫
 
-### 后台接口数据###
+###后台接口数据###
 
 ​用express 搭建的后台，除了图文、阅读、音乐页面的列表是读取的本地json文件外，首页以及其他详情数据都是用爬虫爬取得[ONE.一个]网站的数据[注：这里爬取数据只是一个练习，练习而已，并没有非法使用爬来的数据呀 :scared:  ]。
 
-### 关于爬虫###
+###关于爬虫###
 
 这里只是一个非常简单的爬虫，用的是Node HTTP API的get方法，获取到要爬取的页面，然后使用`cheerio` 进行解析处理获得想要的数据。
 
-### 运行项目###
+###运行项目###
 
 ```
 //先克隆项目
@@ -36,7 +36,9 @@ npm run build
 线上效果请[戳这里](https://imitateone-ailidan.rhcloud.com/#/)
 
 ####移动端扫描下方二维码####
-[!image](https://github.com/eidonlon/imitate-One/tree/master/static/images/link.png)
+
+![image](https://github.com/eidonlon/imitate-One/tree/master/static/images/link.png)
+
 ###部分截图###
 
 **都看到这里，给个star 吧。**
