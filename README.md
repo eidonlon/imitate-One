@@ -34,10 +34,10 @@ npm run build
 
 ## 效果演示
 
-线上效果请[戳这里](https://imitateone-ailidan.rhcloud.com/#/)
+线上效果请[戳这里](https://imitateone-ailidan.rhcloud.com/#/);(请在chrome下调成手机模式预览)
 
-##### 移动端扫描下方二维码(请在chrome下调成手机模式预览)
 
+##### 移动端扫描下方二维码
 <img src="https://github.com/eidonlon/imitate-One/blob/master/static/images/link.png" />
 
 ## 部分截图
