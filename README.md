@@ -38,7 +38,7 @@ npm run build
 
 ##### 移动端扫描下方二维码(请在chrome下调成手机模式预览)
 
-![二维码](https://github.com/zhangyudan/imitate-One/tree/master/static/images/link.png)
+![二维码](imitate-One/static/images/link.png)
 
 ## 部分截图
 
