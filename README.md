@@ -1,8 +1,6 @@
 
 ## imitate ONE
 
-## imitate ONE
-
 简介:这是一个使用vue仿的[ONE.一个]app,纯粹学习而已。
 
 ## 用到的技术
@@ -19,18 +17,18 @@ vue2 + vue-router + vue-resource + webpack + express + Node爬虫
 
 ## 运行项目
 
-```
-//先克隆项目
+``` bash
+#先克隆项目
 git clone https://github.com/eidonlon/imitate-One.git
-//进入文件夹
+#进入文件夹
 cd imitate-One
-//安装依赖
+#安装依赖
 npm install
-//运行
+#运行
 npm run dev
 
-//然后浏览器会自动打开页面，请在chrome下调成手机模式预览
-//另，项目打包[此处只打包了前端的代码，后台并没有一起被打包]
+#然后浏览器会自动打开页面，请在chrome下调成手机模式预览
+#另，项目打包[此处只打包了前端的代码，后台并没有一起被打包]
 npm run build 
 ```
 
@@ -38,11 +36,15 @@ npm run build
 
 线上效果请[戳这里](https://imitateone-ailidan.rhcloud.com/#/)
 
-##### 移动端扫描下方二维码
+##### 移动端扫描下方二维码(请在chrome下调成手机模式预览)
 
-![image](https://github.com/eidonlon/imitate-One/tree/master/static/images/link.png);
+<img src="https://github.com/eidonlon/imitate-One/blob/master/static/images/link.png" />
 
 ## 部分截图
+<img src="https://github.com/eidonlon/imitate-One/blob/master/static/images/home.jpg" />
+<img src="https://github.com/eidonlon/imitate-One/blob/master/static/images/menu.jpg" />
+<img src="https://github.com/eidonlon/imitate-One/blob/master/static/images/music.jpg" />
+<img src="https://github.com/eidonlon/imitate-One/blob/master/static/images/read.jpg" />
 
 **都看到这里，给个star 吧。**
 
