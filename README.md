@@ -35,7 +35,7 @@ npm run build
 
 线上效果请[戳这里](https://imitateone-ailidan.rhcloud.com/#/)
 
-####移动端扫描下方二维码####
+###移动端扫描下方二维码###
 
 ![image](https://github.com/eidonlon/imitate-One/tree/master/static/images/link.png)
 
