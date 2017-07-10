@@ -26,24 +26,24 @@ window.onload = function(){
   },false);
 
   window.onresize = function(){
-	var width = nav.offsetWidth;
-	nav.style.left = - width - 10 +"px";
+  	var width = nav.offsetWidth;
+  	nav.style.left = - width - 10 +"px";
   }
   function toggleMenu(speed,position){
-	if(stop){
-	  window.cancelAnimationFrame(moveTo.bind(this,speed,position));
-	  window.requestAnimationFrame(moveTo.bind(this,speed,position));   
-	}else{
-	  window.requestAnimationFrame(moveTo.bind(this,speed,position));   
-	}
+  	if(stop){
+  	  window.cancelAnimationFrame(moveTo.bind(this,speed,position));
+  	  window.requestAnimationFrame(moveTo.bind(this,speed,position));   
+  	}else{
+  	  window.requestAnimationFrame(moveTo.bind(this,speed,position));   
+  	}
   }
   function moveTo(speed,position){
-	nav.style.left = nav.offsetLeft + speed +"px";
-	if(Math.abs(Math.abs(nav.offsetLeft) - Math.abs(position)) > 8){
-	 stop = window.requestAnimationFrame(moveTo.bind(this,speed,position));   
-	}else{
-	  nav.style.left = position +"px";
-	  window.cancelAnimationFrame(moveTo.bind(this,speed,position));
-	}
+  	nav.style.left = nav.offsetLeft + speed +"px";
+  	if(Math.abs(Math.abs(nav.offsetLeft) - Math.abs(position)) > 8){
+  	 stop = window.requestAnimationFrame(moveTo.bind(this,speed,position));   
+  	}else{
+  	  nav.style.left = position +"px";
+  	  window.cancelAnimationFrame(moveTo.bind(this,speed,position));
+  	}
   }
 }
