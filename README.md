@@ -44,9 +44,16 @@ npm run build
 ![二维码](https://github.com/eidonlon/imitate-One/blob/master/static/images/link.png)
 
 ## 部分截图
+首页
 ![home](https://github.com/eidonlon/imitate-One/blob/master/static/images/home.jpg)
+
+菜单
 ![menu](https://github.com/eidonlon/imitate-One/blob/master/static/images/menu.jpg)
+
+音乐
 ![music](https://github.com/eidonlon/imitate-One/blob/master/static/images/music.jpg)
+
+阅读
 ![read](https://github.com/eidonlon/imitate-One/blob/master/static/images/read.jpg)
 
 **都看到这里，给个star 吧。**
