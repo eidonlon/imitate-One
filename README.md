@@ -41,13 +41,13 @@ npm run build
 
 
 ##### 移动端扫描下方二维码
-<img src="https://github.com/eidonlon/imitate-One/blob/master/static/images/link.png" />
+![二维码](https://github.com/eidonlon/imitate-One/blob/master/static/images/link.png)
 
 ## 部分截图
-<img src="https://github.com/eidonlon/imitate-One/blob/master/static/images/home.jpg" />
-<img src="https://github.com/eidonlon/imitate-One/blob/master/static/images/menu.jpg" />
-<img src="https://github.com/eidonlon/imitate-One/blob/master/static/images/music.jpg" />
-<img src="https://github.com/eidonlon/imitate-One/blob/master/static/images/read.jpg" />
+![home](https://github.com/eidonlon/imitate-One/blob/master/static/images/home.jpg)
+![menu](https://github.com/eidonlon/imitate-One/blob/master/static/images/menu.jpg)
+![music](https://github.com/eidonlon/imitate-One/blob/master/static/images/music.jpg)
+![read](https://github.com/eidonlon/imitate-One/blob/master/static/images/read.jpg)
 
 **都看到这里，给个star 吧。**
 
