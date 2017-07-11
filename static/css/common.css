@@ -30,7 +30,7 @@ span,i{display: inline-block;}
 .main{
   position: relative;
   height: 100vh;
-  overflow-y: scroll;
+  overflow-y: auto;
   width: 100%;
 }
 .main p{
@@ -97,7 +97,7 @@ span,i{display: inline-block;}
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
-  width: 100%;
+  /*width: 100%;*/
   position: relative;
   /*top: -2px;*/
   box-sizing: border-box;
