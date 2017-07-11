@@ -1,6 +1,6 @@
 <template>
 <div class="home-box">
-  <div class="home-bg"  :style="homeDesc.bgImg" @click="articlesToPicture(homeDesc.id,$event)">
+  <div class="home-bg"  :style="homeDesc.bgImg" @click="articlesToDetail(homeDesc.id,$event)">
     <div class="home-bgcolor">
       <div class="home-desc">
         <h4 class="home-day">{{homeDesc.day}}</h4>
@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import oneLoad from "./loading.vue"
+import oneLoad from "../components/loading.vue"
 export default {
   name: 'home',
   components:{
@@ -63,7 +63,7 @@ export default {
         console.log(error);
       });
     },
-    articlesToPicture: function(id,$event){
+    articlesToDetail: function(id,$event){
         console.log($event.target.className)
         if($event.target.className != "down"){
           this.$router.push("/pictureDetail?id="+id)

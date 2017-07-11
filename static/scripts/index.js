@@ -9,25 +9,26 @@ window.onload = function(){
 
   linkTo = Array.prototype.slice.call(linkTo);
   menu.addEventListener("click",function(){
-      toggleMenu(8,0);
+      toggleMenu(10,0);
       showSymbol = !showSymbol;
   },false);
 
   linkTo.forEach(function(val){
     val.addEventListener("click",function(){
-      toggleMenu(-8,position);
+      toggleMenu(-10,position);
       showSymbol = !showSymbol;
      },false);
   });
 
   homeMain.addEventListener("click",function(){
-      toggleMenu(-8,position);
+      toggleMenu(-10,position);
       showSymbol = !showSymbol;
   },false);
 
   window.onresize = function(){
   	var width = nav.offsetWidth;
   	nav.style.left = - width - 10 +"px";
+    position = nav.offsetLeft;
   }
   function toggleMenu(speed,position){
   	if(stop){
@@ -39,7 +40,7 @@ window.onload = function(){
   }
   function moveTo(speed,position){
   	nav.style.left = nav.offsetLeft + speed +"px";
-  	if(Math.abs(Math.abs(nav.offsetLeft) - Math.abs(position)) > 8){
+  	if(Math.abs(Math.abs(nav.offsetLeft) - Math.abs(position)) > 10){
   	 stop = window.requestAnimationFrame(moveTo.bind(this,speed,position));   
   	}else{
   	  nav.style.left = position +"px";

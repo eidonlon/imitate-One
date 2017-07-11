@@ -1,6 +1,6 @@
 <template>
   <div class="one-menu">
-      <router-link to="/reads" class="link-to">
+      <router-link to="/read" class="link-to">
         阅读
       </router-link>
       <router-link to="/picture" class="link-to">

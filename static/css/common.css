@@ -180,13 +180,17 @@ span,i{display: inline-block;}
   color: #54b2d8;
   margin: .1rem;
 }
+.home-title{
+  margin-bottom: .2rem;
+  line-height: .8rem;
+}
 .home-article{
   margin-bottom: 1rem;
 }
 .home-question{
   margin-bottom: 1rem;
 }
-.home-question p{
+.home-question p,.home-article p{
   -webkit-line-clamp: 3;
   overflow: hidden;
   text-overflow: ellipsis;
