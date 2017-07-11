@@ -63,11 +63,9 @@ router.get("/readDetail",function(req,res){
 			$(".text-editor").each(function(){
 				detail.editor.push($(this).text());
 			})
-
 			res.charset = 'utf-8';
-			console.log(detail.article)
 			res.send({"detail":detail})
-		},"utf-8");
+		});
 	}).on("error",function(err){
 		console.log(err)
 	})
