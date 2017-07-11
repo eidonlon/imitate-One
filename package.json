@@ -2,7 +2,7 @@
   "name": "one",
   "version": "1.0.0",
   "description": "demo",
-  "author": "爱莉缇 <ai_li_ti@sina.com>",
+  "author": "eidolon <ai_li_ti@sina.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
