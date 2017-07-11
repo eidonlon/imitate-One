@@ -20,10 +20,13 @@ vue2 + vue-router + vue-resource + webpack + express + Node爬虫
 ``` bash
 #先克隆项目
 git clone https://github.com/eidonlon/imitate-One.git
+
 #进入文件夹
 cd imitate-One
+
 #安装依赖
 npm install
+
 #运行
 npm run dev
 
