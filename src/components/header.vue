@@ -14,33 +14,4 @@ export default {
 }
 </script>
 <style>
-	.header{
-		height: .7rem;
-		width: 100%;
-		text-align: center;
-		line-height: .7rem;
-		border-left: 1px solid #ddd;
-    	border-right: 1px solid #ddd;
-	}
-	.one-title{
-		display: inline-block;
-		font-size: .35rem;
-	}
-	.header i{
-		display: inline-block;
-		width: .32rem;
-		height: .32rem;
-		padding:.1rem;
-		margin: .12rem;
-	}
-	.menu{
-		background: url("/static/images/menu.png") no-repeat;
-		background-size: 100% 100%;
-		float: left;
-	}
-	.search{
-		background: url("/static/images/search.png") no-repeat;
-		background-size: 100% 100%;
-		float: right;
-	}
 </style>

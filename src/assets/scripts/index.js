@@ -12,19 +12,16 @@ window.onload = function(){
       toggleMenu(10,0);
       showSymbol = !showSymbol;
   },false);
-
   linkTo.forEach(function(val){
     val.addEventListener("click",function(){
       toggleMenu(-10,position);
       showSymbol = !showSymbol;
      },false);
   });
-
   homeMain.addEventListener("click",function(){
       toggleMenu(-10,position);
       showSymbol = !showSymbol;
   },false);
-
   window.onresize = function(){
   	var width = nav.offsetWidth;
   	nav.style.left = - width - 10 +"px";
@@ -47,4 +44,5 @@ window.onload = function(){
   	  window.cancelAnimationFrame(moveTo.bind(this,speed,position));
   	}
   }
+
 }
