@@ -2,7 +2,8 @@ window.onload = function(){
   var menu = document.getElementsByClassName("menu")[0],
   	  nav= document.getElementsByClassName("one-menu")[0],
   	  linkTo= document.getElementsByClassName("link-to"),
-  	  homeMain= document.getElementsByClassName("main")[0],
+      homeMain= document.getElementsByClassName("main")[0],
+      homeBox= document.getElementsByClassName("home-box")[0],
   	  position = nav.offsetLeft,
   	  showSymbol = true,
   	  stop = null;
@@ -21,6 +22,11 @@ window.onload = function(){
   homeMain.addEventListener("click",function(){
       toggleMenu(-10,position);
       showSymbol = !showSymbol;
+  },false);
+  homeMain.addEventListener("mousewheel",function(){
+    if(homeBox.className.indexOf("main-movedown") === -1){
+      homeBox.className = "home-box main-movedown";
+    }
   },false);
   window.onresize = function(){
   	var width = nav.offsetWidth;

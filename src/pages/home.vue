@@ -1,16 +1,16 @@
 <template>
 <div class="home-box">
-  <div class="home-bg"  :style="homeDesc.bgImg" @click="articlesToDetail(homeDesc.id,$event)">
+  <div v-show="ready" class="home-bg"  :style="homeDesc.bgImg" @click="articlesToDetail(homeDesc.id,$event)">
     <div class="home-bgcolor">
       <div class="home-desc">
         <h4 class="home-day">{{homeDesc.day}}</h4>
         <p class="home-month">{{homeDesc.month}}</p>
         <p class="home-text-short">{{homeDesc.textShort}}</p>
-        <span class="home-down"><i class="down"></i></span>     
+        <span class="home-down"><i class="down down01"></i><i class="down down02"></i><i class="down down03"></i></span>     
       </div>
     </div>
   </div>
-  <div class="home-content">
+  <div class="home-content"  v-show="ready">
     <div class="home-article">
       <span class="home-tag">阅读|</span>
       <h1 class="home-title">{{homeArticle.artTitle}}</h1>
@@ -44,6 +44,7 @@ export default {
   return {
     msg: 'Welcome to one demo',
     showLoading:true,
+    ready:false,
     homeDesc:{},
     homeArticle:{},
     homeQuestion:{}
@@ -59,6 +60,7 @@ export default {
         this.homeArticle = response.body.homeArticle;
         this.homeQuestion = response.body.homeQuestion;
         this.showLoading = false;
+        this.ready = true;
       },error => {
         console.log(error);
       });
@@ -76,7 +78,6 @@ export default {
         this.$router.push("/questionDetail?id="+id)
     }
   }
-
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
