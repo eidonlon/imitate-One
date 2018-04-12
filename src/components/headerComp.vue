@@ -19,7 +19,7 @@
 </template>
 <script>
 export default {
-	name: "header",
+	name: "headerComp",
 	data:function(){
 		return {
 			searchShow:false,

@@ -24,8 +24,10 @@ window.onload = function(){
       showSymbol = !showSymbol;
   },false);
   homeMain.addEventListener("mousewheel",function(){
-    if(homeBox.className.indexOf("main-movedown") === -1){
-      homeBox.className = "home-box main-movedown";
+    if(homeBox){
+      if(homeBox.className.indexOf("main-movedown") === -1){
+        homeBox.className = "home-box main-movedown";
+      }
     }
   },false);
   window.onresize = function(){

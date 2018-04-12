@@ -9,8 +9,8 @@
 </template>
 
 <script>
-  import oneHeader from "./components/header.vue"
-  import oneMenu from "./components/menu.vue"
+  import oneHeader from "./components/headerComp.vue"
+  import oneMenu from "./components/menuComp.vue"
 export default {
   name: 'app',
   data:function(){

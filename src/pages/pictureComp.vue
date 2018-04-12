@@ -16,7 +16,7 @@
 </template>
 <script>
 export default {
-	name:"picture",
+	name:"pictureComp",
 	data:function(){
 		return {
 			pictureData:""

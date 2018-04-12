@@ -3,7 +3,7 @@
 </template>
 <script>
 export default {
-	name: "header"
+	name: "movie"
 }
 </script>
 <style>

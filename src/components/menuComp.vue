@@ -19,7 +19,7 @@
 </template>
 <script type="text/javascript">
   export default {
-    'name' : 'menu',
+    'name' : 'menuComp',
     data:function(){
       return {msg:"this is menu"}
     }
