@@ -37,11 +37,11 @@ npm run dev
 #另，项目打包[此处只打包了前端的代码，后台并没有一起被打包]
 npm run build 
 ```
-**额额额，服务器到期了，线上预览的效果没有了，想要看效果的请按照上述步骤在本地运行查看。**
+
 
 ## 效果演示
 
-线上效果请[戳这里](https://imitateone-ailidan.rhcloud.com/#/);(请在chrome下调成手机模式预览)
+线上效果请[戳这里](http://ddan.applinzi.com/one#/);(请在chrome下调成手机模式预览)
 
 
 ##### 移动端扫描下方二维码
