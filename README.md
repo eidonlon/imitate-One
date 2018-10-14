@@ -3,6 +3,9 @@
 
 简介:这是一个使用vue仿的[ONE.一个]app,纯粹学习而已。
 
+*声明 更新于2018-10-14*
+这基本是一个过期的demo了，因为原本所用到的技术都更新了，所以请参考我隔壁的最新的demo，[最新demo](https://github.com/eidonlon/imitate-beautiful-thing).
+
 ## 用到的技术
 
 vue2 + vue-router + vue-resource + webpack + express + Node爬虫
